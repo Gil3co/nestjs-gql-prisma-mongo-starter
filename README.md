@@ -14,8 +14,8 @@ Afterwards, go to the newly created folder `gql-prisma`, run `npm run start:dev`
 ```
 query {
 	dummy (id: 1) {
-        exampleField
-  }
+		exampleField
+  	}
 }
 ```
 
