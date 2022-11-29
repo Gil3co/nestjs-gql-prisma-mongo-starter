@@ -27,7 +27,8 @@ mongoUri=mongodb://localhost/$dbName?replicaSet=$replSetName
 
 
 if [[ $1 == "stop" ]]
-then 
+then
+  # persisting current data before stopping
   docker exec -it $rs1 sh -c "cp $dockerVolumePath/$collection1/$jsonFile $dockerVolumePath/$collection1/$backupJsonFile && mongoexport --uri $mongoUri -d $dbName -c $collection1 -o $dockerVolumePath/$collection1/$jsonFile --jsonArray --pretty"
 
   docker kill $rs1 $rs2 $rs3
@@ -36,11 +37,12 @@ fi
 
 docker network create $mongoClusterName
 
+# starting all 3 dockers with replica set
 docker run -d --rm -p $port1:27017 --name $rs1 --volume $volumePath:$dockerVolumePath --network $mongoClusterName mongo mongod --replSet $replSetName --bind_ip localhost,$rs1  
 docker run -d --rm -p $port2:27017 --name $rs2 --network $mongoClusterName mongo mongod --replSet $replSetName --bind_ip localhost,$rs2
 docker run -d --rm -p $port3:27017 --name $rs3 --network $mongoClusterName mongo mongod --replSet $replSetName --bind_ip localhost,$rs3 
 
-
+# initiating the servers
 docker exec -it $rs1 mongosh --eval "rs.initiate({
  _id: \"$replSetName\",
  members: [
@@ -50,8 +52,11 @@ docker exec -it $rs1 mongosh --eval "rs.initiate({
  ]
 })"
 
+
+# health check
 docker exec -it $rs1 mongosh --eval "rs.status()"
 
 echo "\nConnecting to Mongo...\n"
 
+# importing starting data
 docker exec -it $rs1 sh -c "mongoimport --uri $mongoUri --db $dbName --collection $collection1 --type json --file $dockerVolumePath/$collection1/$jsonFile --jsonArray"
