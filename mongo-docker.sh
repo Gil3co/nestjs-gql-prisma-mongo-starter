@@ -23,7 +23,7 @@ dbName=newProject
 
 collection1=Dummy
 
-mongoUri=mongodb://localhost/$dbName?replicaSet=myReplicaSet
+mongoUri=mongodb://localhost/$dbName?replicaSet=$replSetName
 
 
 if [[ $1 == "stop" ]]
