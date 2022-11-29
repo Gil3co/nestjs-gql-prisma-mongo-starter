@@ -1,3 +1,4 @@
+npm i -g @nestjs/cli
 nest new gql-prisma
 
 cd gql-prisma
