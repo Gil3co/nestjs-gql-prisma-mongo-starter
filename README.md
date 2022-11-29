@@ -20,3 +20,7 @@ query {
 ```
 
 You can start developing your application :)
+
+## Starting and stopping the Dockers running the MongoDB server
+
+In general, run `sh mongo-docker.sh` to start the dockers and run `sh mongo-docker.sh stop` to stop them
