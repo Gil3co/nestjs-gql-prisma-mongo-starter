@@ -1,5 +1,7 @@
 # nestjs-gql-prisma-mongo-starter
 
+Welcome to this application starter! I was having trouble starting a project with NestJS, Prisma and GraphQL, so I decided to write this in order to help others.
+
 ## GraphQL + Prisma
 
 Run `sh initialize-gql-prisma.sh` in the terminal and follow the prompts:
