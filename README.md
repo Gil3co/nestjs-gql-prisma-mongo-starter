@@ -15,7 +15,7 @@ Run `sh initialize-gql-prisma.sh` in the terminal and follow the prompts:
 
 This will initialize a new NestJS project, install GraphQL and Prisma, and run a Docker that starts a MongoDB server (with a replica set, since Prisma requires that)
 
-Afterwards, go to the newly created folder `gql-prisma`, run `npm run start:dev`/`yarn run start:dev`, go to `http://localhost:3000/graphql` and run the following query:
+Afterwards, go to the newly created folder `gql-prisma-nest`, run `npm run start:dev`/`yarn run start:dev`, go to `http://localhost:3000/graphql` and run the following query:
 
 ```
 query {

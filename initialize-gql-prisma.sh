@@ -1,7 +1,7 @@
 npm i -g @nestjs/cli
-nest new gql-prisma
+nest new gql-prisma-nest
 
-cd gql-prisma
+cd gql-prisma-nest
 
 sh ../helper-scripts/initialize-gql-helper.sh
 
