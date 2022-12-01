@@ -27,6 +27,16 @@ query {
 
 You can start developing your application :)
 
+## Prisma
+
+Run `sh initialize-prisma.sh` in the terminal and choose your favorite package manager.
+
+This will initialize a new NestJS project, install Prisma, and run a Docker that starts a MongoDB server (with a replica set, since Prisma requires that)
+
+Afterwards, go to the newly created folder `prisma-nest`, run `npm run start:dev`/`yarn run start:dev`, and then run `curl http://localhost:3000/` in another terminal window.
+
+You can start developing your application :)
+
 ## Starting and stopping the Dockers running the MongoDB server
 
 In general, run `sh mongo-docker.sh` to start the dockers and run `sh mongo-docker.sh stop` to stop them

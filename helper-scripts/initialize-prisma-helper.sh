@@ -11,6 +11,9 @@ cp ../.env .
 if [[ $1 == "isGql" ]]
 then
   cp ../gql-prisma-premade-files/prisma-dummy.service.ts ./src/Dummy/dummy.service.ts
+else
+  cp ../prisma-premade-files/prisma-app.controller.ts ./src/app.controller.ts
+  cp ../prisma-premade-files/prisma-app.service.ts ./src/app.service.ts
 fi
 
 npx prisma generate
