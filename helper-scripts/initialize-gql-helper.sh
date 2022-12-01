@@ -7,4 +7,4 @@ nest g resource dummy
 # removing unnecessary files and copying premade files to jumpstart the application
 rm ./src/app.controller.ts
 rm ./src/app.service.ts
-cp ../gql-app.module.ts ./src/app.module.ts
+cp ../gql-prisma-premade-files/gql-app.module.ts ./src/app.module.ts

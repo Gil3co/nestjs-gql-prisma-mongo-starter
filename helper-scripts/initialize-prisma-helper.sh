@@ -6,5 +6,11 @@ npm install @prisma/client
 # copying premade files to jumpstart the application
 cp ../schema.prisma ./prisma/schema.prisma
 cp ../.env .
-cp ../prisma-dummy.service.ts ./src/Dummy/dummy.service.ts
+
+
+if [[ $1 == "isGql" ]]
+then
+  cp ../gql-prisma-premade-files/prisma-dummy.service.ts ./src/Dummy/dummy.service.ts
+fi
+
 npx prisma generate
