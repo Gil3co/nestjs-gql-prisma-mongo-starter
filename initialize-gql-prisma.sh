@@ -3,8 +3,8 @@ nest new gql-prisma
 
 cd gql-prisma
 
-sh ../initialize-gql.sh
+sh ../helper-scripts/initialize-gql-helper.sh
 
-sh ../initialize-prisma.sh
+sh ../helper-scripts/initialize-prisma-helper.sh
 
-sh ../initialize-mongo.sh
+sh ../helper-scripts/initialize-mongo-helper.sh
