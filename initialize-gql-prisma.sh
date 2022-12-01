@@ -1,7 +1,9 @@
-npm i -g @nestjs/cli
-nest new gql-prisma-nest
+folderName=gql-prisma-nest
 
-cd gql-prisma-nest
+npm i -g @nestjs/cli
+nest new $folderName
+
+cd $folderName
 
 sh ../helper-scripts/initialize-gql-helper.sh
 
