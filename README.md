@@ -39,7 +39,9 @@ You can start developing your application :)
 
 ## Starting and stopping the Dockers running the MongoDB server
 
-In general, run `sh mongo-docker.sh` to start the dockers and run `sh mongo-docker.sh stop` to stop them
-In the file `mongo-docker.sh` there is a variable named `mongoPersistPath`. It will point the Docker to the folder in which to persist the mongo data.
+In general, run `sh mongo-docker.sh` to start the dockers and run `sh mongo-docker.sh stop` to stop them.
+
+In the file `mongo-docker.sh` there is a variable named `mongoPersistPath`. It will point the Docker to the path in which to persist the mongo data.
 Feel free to change it to whichever path you would like your data to be persisted in.
+
 In addition, feel free to remove the `mongoimport` command, as it's only there to scaffold your application.
